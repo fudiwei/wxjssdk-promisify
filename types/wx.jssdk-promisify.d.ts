@@ -1,71 +1,73 @@
 /// <reference path="./wx.jssdk.d.ts" />
 
 declare namespace WechatJssdk {
-    type ISuccessCallbackResultType<T extends { success?: (...args: any) => any }> = Parameters<T['success']>[0];
+    namespace Wx {
+        type PromisifiedCallbackResult<T extends { success?: (...args: any) => any }> = Promise<Parameters<T['success']>[0]>;
+    }
 
     interface Wx {
-        checkJsApiAsync(option?: CheckJsApiOption): Promise<ISuccessCallbackResultType<CheckJsApiOption>>;
+        checkJsApiAsync(options?: CheckJsApiOption): Wx.PromisifiedCallbackResult<CheckJsApiOption>;
 
         /* 分享接口 */
-        updateAppMessageShareDataAsync(option?: UpdateAppMessageShareDataOption): Promise<ISuccessCallbackResultType<UpdateAppMessageShareDataOption>>;
-        updateTimelineShareDataAsync(option?: UpdateTimelineShareDataOption): Promise<ISuccessCallbackResultType<UpdateTimelineShareDataOption>>;
-        onMenuShareTimelineAsync(option?: OnMenuShareTimelineOption): Promise<ISuccessCallbackResultType<OnMenuShareTimelineOption>>;
-        onMenuShareAppMessageAsync(option?: OnMenuShareAppMessageOption): Promise<ISuccessCallbackResultType<OnMenuShareAppMessageOption>>;
-        onMenuShareQQAsync(option?: OnMenuShareQQOption): Promise<ISuccessCallbackResultType<OnMenuShareQQOption>>;
-        onMenuShareWeiboAsync(option?: OnMenuShareWeiboOption): Promise<ISuccessCallbackResultType<OnMenuShareWeiboOption>>;
-        onMenuShareQZoneAsync(option?: OnMenuShareQZoneOption): Promise<ISuccessCallbackResultType<OnMenuShareQZoneOption>>;
+        updateAppMessageShareDataAsync(options?: UpdateAppMessageShareDataOption): Wx.PromisifiedCallbackResult<UpdateAppMessageShareDataOption>;
+        updateTimelineShareDataAsync(options?: UpdateTimelineShareDataOption): Wx.PromisifiedCallbackResult<UpdateTimelineShareDataOption>;
+        onMenuShareTimelineAsync(options?: OnMenuShareTimelineOption): Wx.PromisifiedCallbackResult<OnMenuShareTimelineOption>;
+        onMenuShareAppMessageAsync(options?: OnMenuShareAppMessageOption): Wx.PromisifiedCallbackResult<OnMenuShareAppMessageOption>;
+        onMenuShareQQAsync(options?: OnMenuShareQQOption): Wx.PromisifiedCallbackResult<OnMenuShareQQOption>;
+        onMenuShareWeiboAsync(options?: OnMenuShareWeiboOption): Wx.PromisifiedCallbackResult<OnMenuShareWeiboOption>;
+        onMenuShareQZoneAsync(options?: OnMenuShareQZoneOption): Wx.PromisifiedCallbackResult<OnMenuShareQZoneOption>;
 
         /* 图像接口 */
-        chooseImageAsync(option?: ChooseImageOption): Promise<ISuccessCallbackResultType<ChooseImageOption>>;
-        previewImageAsync(option?: PreviewImageOption): Promise<ISuccessCallbackResultType<PreviewImageOption>>;
-        uploadImageAsync(option?: UploadImageOption): Promise<ISuccessCallbackResultType<UploadImageOption>>;
-        downloadImageAsync(option?: DownloadImageOption): Promise<ISuccessCallbackResultType<DownloadImageOption>>;
-        getLocalImgDataAsync(option?: GetLocalImgDataOption): Promise<ISuccessCallbackResultType<GetLocalImgDataOption>>;
+        chooseImageAsync(options?: ChooseImageOption): Wx.PromisifiedCallbackResult<ChooseImageOption>;
+        previewImageAsync(options?: PreviewImageOption): Wx.PromisifiedCallbackResult<PreviewImageOption>;
+        uploadImageAsync(options?: UploadImageOption): Wx.PromisifiedCallbackResult<UploadImageOption>;
+        downloadImageAsync(options?: DownloadImageOption): Wx.PromisifiedCallbackResult<DownloadImageOption>;
+        getLocalImgDataAsync(options?: GetLocalImgDataOption): Wx.PromisifiedCallbackResult<GetLocalImgDataOption>;
 
         /* 音频接口 */
-        startRecordAsync(option?: StartRecordOption): Promise<ISuccessCallbackResultType<StartRecordOption>>;
-        stopRecordAsync(option?: StopRecordOption): Promise<ISuccessCallbackResultType<StopRecordOption>>;
-        playVoiceAsync(option?: PlayVoiceOption): Promise<ISuccessCallbackResultType<PlayVoiceOption>>;
-        pauseVoiceAsync(option?: PauseVoiceOption): Promise<ISuccessCallbackResultType<PauseVoiceOption>>;
-        stopVoiceAsync(option?: StopVoiceOption): Promise<ISuccessCallbackResultType<StopVoiceOption>>;
-        uploadVoiceAsync(option?: UploadVoiceOption): Promise<ISuccessCallbackResultType<UploadVoiceOption>>;
-        downloadVoiceAsync(option?: DownloadVoiceOption): Promise<ISuccessCallbackResultType<DownloadVoiceOption>>;
+        startRecordAsync(options?: StartRecordOption): Wx.PromisifiedCallbackResult<StartRecordOption>;
+        stopRecordAsync(options?: StopRecordOption): Wx.PromisifiedCallbackResult<StopRecordOption>;
+        playVoiceAsync(options?: PlayVoiceOption): Wx.PromisifiedCallbackResult<PlayVoiceOption>;
+        pauseVoiceAsync(options?: PauseVoiceOption): Wx.PromisifiedCallbackResult<PauseVoiceOption>;
+        stopVoiceAsync(options?: StopVoiceOption): Wx.PromisifiedCallbackResult<StopVoiceOption>;
+        uploadVoiceAsync(options?: UploadVoiceOption): Wx.PromisifiedCallbackResult<UploadVoiceOption>;
+        downloadVoiceAsync(options?: DownloadVoiceOption): Wx.PromisifiedCallbackResult<DownloadVoiceOption>;
 
         /* 智能接口 */
-        translateVoiceAsync(option?: TranslateVoiceOption): Promise<ISuccessCallbackResultType<TranslateVoiceOption>>;
+        translateVoiceAsync(options?: TranslateVoiceOption): Wx.PromisifiedCallbackResult<TranslateVoiceOption>;
 
         /* 设备信息 */
-        getNetworkTypeAsync(option?: GetNetworkTypeOption): Promise<ISuccessCallbackResultType<GetNetworkTypeOption>>;
+        getNetworkTypeAsync(options?: GetNetworkTypeOption): Wx.PromisifiedCallbackResult<GetNetworkTypeOption>;
 
         /* 地理位置 */
-        openLocationAsync(option?: OpenLocationOption): Promise<ISuccessCallbackResultType<OpenLocationOption>>;
-        getLocationAsync(option?: GetLocationOption): Promise<ISuccessCallbackResultType<GetLocationOption>>;
+        openLocationAsync(options?: OpenLocationOption): Wx.PromisifiedCallbackResult<OpenLocationOption>;
+        getLocationAsync(options?: GetLocationOption): Wx.PromisifiedCallbackResult<GetLocationOption>;
 
         /* 摇一摇周边 */
-        startSearchBeaconsAsync(option?: StartSearchBeaconsOption): Promise<ISuccessCallbackResultType<StartSearchBeaconsOption>>;
-        stopSearchBeaconsAsync(option?: StopSearchBeaconsOption): Promise<ISuccessCallbackResultType<StopSearchBeaconsOption>>;
+        startSearchBeaconsAsync(options?: StartSearchBeaconsOption): Wx.PromisifiedCallbackResult<StartSearchBeaconsOption>;
+        stopSearchBeaconsAsync(options?: StopSearchBeaconsOption): Wx.PromisifiedCallbackResult<StopSearchBeaconsOption>;
 
         /* 界面操作 */
-        hideMenuItemsAsync(option?: HideMenuItemsOption): Promise<ISuccessCallbackResultType<HideMenuItemsOption>>;
-        showMenuItemsAsync(option?: ShowMenuItemsOption): Promise<ISuccessCallbackResultType<ShowMenuItemsOption>>;
-        hideAllNonBaseMenuItemAsync(option?: HideAllNonBaseMenuItemOption): Promise<ISuccessCallbackResultType<HideAllNonBaseMenuItemOption>>;
-        showAllNonBaseMenuItemAsync(option?: ShowAllNonBaseMenuItemOption): Promise<ISuccessCallbackResultType<ShowAllNonBaseMenuItemOption>>;
+        hideMenuItemsAsync(options?: HideMenuItemsOption): Wx.PromisifiedCallbackResult<HideMenuItemsOption>;
+        showMenuItemsAsync(options?: ShowMenuItemsOption): Wx.PromisifiedCallbackResult<ShowMenuItemsOption>;
+        hideAllNonBaseMenuItemAsync(options?: HideAllNonBaseMenuItemOption): Wx.PromisifiedCallbackResult<HideAllNonBaseMenuItemOption>;
+        showAllNonBaseMenuItemAsync(options?: ShowAllNonBaseMenuItemOption): Wx.PromisifiedCallbackResult<ShowAllNonBaseMenuItemOption>;
 
         /* 微信扫一扫 */
-        scanQRCodeAsync(option?: ScanQRCodeOption): Promise<ISuccessCallbackResultType<ScanQRCodeOption>>;
+        scanQRCodeAsync(options?: ScanQRCodeOption): Wx.PromisifiedCallbackResult<ScanQRCodeOption>;
 
         /* 微信小店 */
-        openProductSpecificViewAsync(option?: OpenProductSpecificViewOption): Promise<ISuccessCallbackResultType<OpenProductSpecificViewOption>>;
+        openProductSpecificViewAsync(options?: OpenProductSpecificViewOption): Wx.PromisifiedCallbackResult<OpenProductSpecificViewOption>;
 
         /* 微信卡券 */
-        chooseCardAsync(option?: ChooseCardOption): Promise<ISuccessCallbackResultType<ChooseCardOption>>;
-        addCardAsync(option?: AddCardOption): Promise<ISuccessCallbackResultType<AddCardOption>>;
-        openCardAsync(option?: OpenCardOption): Promise<ISuccessCallbackResultType<OpenCardOption>>;
+        chooseCardAsync(options?: ChooseCardOption): Wx.PromisifiedCallbackResult<ChooseCardOption>;
+        addCardAsync(options?: AddCardOption): Wx.PromisifiedCallbackResult<AddCardOption>;
+        openCardAsync(options?: OpenCardOption): Wx.PromisifiedCallbackResult<OpenCardOption>;
 
         /* 微信支付 */
-        chooseWXPayAsync(option?: ChooseWXPayOption): Promise<ISuccessCallbackResultType<ChooseWXPayOption>>;
+        chooseWXPayAsync(options?: ChooseWXPayOption): Wx.PromisifiedCallbackResult<ChooseWXPayOption>;
 
         /* 快速输入 */
-        openAddressAsync(option?: OpenAddressOption): Promise<ISuccessCallbackResultType<OpenAddressOption>>;
+        openAddressAsync(options?: OpenAddressOption): Wx.PromisifiedCallbackResult<OpenAddressOption>;
     }
 }
