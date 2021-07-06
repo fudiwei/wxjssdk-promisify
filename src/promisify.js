@@ -123,7 +123,7 @@ module.exports = (options = {}) => {
                     failFn = args.fail,
                     completeFn = args.complete;
 
-                return new Promise((resolve, reject) => {
+                const p = new Promise((resolve, reject) => {
                     args.success = (res) => {
                         resolve(res);
                     };
@@ -153,15 +153,21 @@ module.exports = (options = {}) => {
                     }
 
                     return Promise.reject(res);
-                }).finally(() => {
-                    if (isCallable(completeFn)) {
-                        try {
-                            completeFn();
-                        } catch (err) {
-                            console.error(err);
-                        }
-                    }
                 });
+
+                if (isCallable(Promise.prototype.finally)) {
+                    p.finally(() => {
+                        if (isCallable(completeFn)) {
+                            try {
+                                completeFn();
+                            } catch (err) {
+                                console.error(err);
+                            }
+                        }
+                    });
+                }
+
+                return p;
             };
 
             options.root[prop + 'Async'] = newFn;
