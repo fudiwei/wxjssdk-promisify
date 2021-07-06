@@ -1,0 +1,50 @@
+{
+    "name": "@skit/wxjssdk",
+    "title": "wx-jssdk",
+    "description": "Provide TypeScript declaration for wx-jssdk, and converts callback-based functions to Promises. 为微信 JS-SDK 提供 TypeScript 支持，同时将其基于回调的异步函数转化为 Promise 形式。",
+    "version": "1.6.0",
+    "main": "dist/index.js",
+    "author": "Fu Diwei",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fudiwei/wxjssdk.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "clean": "gulp clean",
+        "eslint": "gulp eslint",
+        "build": "gulp dist --sourceMap=no",
+        "deploy": "npm run build && npm publish --access=public"
+    },
+    "typings": "types/index.d.ts",
+    "files": [
+        "dist/*",
+        "types/*"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.12.13",
+        "@babel/preset-env": "^7.12.13",
+        "@typescript-eslint/eslint-plugin": "^4.14.2",
+        "@typescript-eslint/parser": "^4.14.2",
+        "eslint": "^7.19.0",
+        "eslint-config-standard": "^16.0.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-standard": "^5.0.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-eslint": "^6.0.0",
+        "gulp-rimraf": "^1.0.0",
+        "gulp-strip-debug": "^4.0.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "^3.0.8",
+        "natives": "^1.1.6",
+        "prettier": "^2.3.2",
+        "q": "^1.5.1",
+        "typescript": "~4.3.5"
+    },
+    "peerDependencies": {
+        "weixin-js-sdk": "~1.6.0"
+    }
+}

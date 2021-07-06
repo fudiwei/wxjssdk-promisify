@@ -1,0 +1,19 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.wordWrapColumn": 160,
+    "javascript.format.semicolons": "insert",
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
+}

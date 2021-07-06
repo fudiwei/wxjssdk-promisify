@@ -1,0 +1,17 @@
+.project
+.settings
+.vs
+.svn
+*~
+*.diff
+*.patch
+.DS_Store
+.bower.json
+.sizecache.json
+
+npm-debug.log*
+
+/node_modules
+
+/dist/*
+!/dist/.eslintrc.json
