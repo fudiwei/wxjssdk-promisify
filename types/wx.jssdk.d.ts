@@ -944,168 +944,168 @@ declare namespace WechatJssdk {
          * 判断当前客户端版本是否支持指定 JS 接口。
          * @param {Object} options 配置项。
          */
-        checkJsApi(options: CheckJsApiOption): void;
+        checkJsApi(options?: CheckJsApiOption): void;
 
         /**
          * 自定义“分享给朋友”及“分享到 QQ”按钮的分享内容。
          * @param {Object} options 配置项。
          */
-        updateAppMessageShareData(options: UpdateAppMessageShareDataOption): void;
+        updateAppMessageShareData(options?: UpdateAppMessageShareDataOption): void;
 
         /**
          * 自定义“分享到朋友圈”及“分享到 QQ 空间”按钮的分享内容。
          * @param {Object} options 配置项。
          */
-        updateTimelineShareData(options: UpdateTimelineShareDataOption): void;
+        updateTimelineShareData(options?: UpdateTimelineShareDataOption): void;
 
         /**
          * 获取“分享到朋友圈”按钮点击状态及自定义分享内容。
          * @param {Object} options 配置项。
          * @deprecated
          */
-        onMenuShareTimeline(options: OnMenuShareTimelineOption): void;
+        onMenuShareTimeline(options?: OnMenuShareTimelineOption): void;
 
         /**
          * 获取“分享给朋友”按钮点击状态及自定义分享内容。
          * @param {Object} options 配置项。
          * @deprecated
          */
-        onMenuShareAppMessage(options: OnMenuShareAppMessageOption): void;
+        onMenuShareAppMessage(options?: OnMenuShareAppMessageOption): void;
 
         /**
          * 获取“分享到 QQ”按钮点击状态及自定义分享内容。
          * @param {Object} options 配置项。
          * @deprecated
          */
-        onMenuShareQQ(options: OnMenuShareQQOption): void;
+        onMenuShareQQ(options?: OnMenuShareQQOption): void;
 
         /**
          * 获取“分享到腾讯微博”按钮点击状态及自定义分享内容。
          * @param {Object} options 配置项。
          * @deprecated
          */
-        onMenuShareWeibo(options: OnMenuShareWeiboOption): void;
+        onMenuShareWeibo(options?: OnMenuShareWeiboOption): void;
 
         /**
          * 获取“分享到 QQ 空间”按钮点击状态及自定义分享内容。
          * @param {Object} options 配置项。
          * @deprecated
          */
-        onMenuShareQZone(options: OnMenuShareQZoneOption): void;
+        onMenuShareQZone(options?: OnMenuShareQZoneOption): void;
 
         /**
          * 拍照或从手机相册中选图。
          * @param {Object} options 配置项。
          */
-        chooseImage(options: ChooseImageOption): void;
+        chooseImage(options?: ChooseImageOption): void;
 
         /**
          * 预览图片。
          * @param {Object} options 配置项。
          */
-        previewImage(options: PreviewImageOption): void;
+        previewImage(options?: PreviewImageOption): void;
 
         /**
          * 上传图片。
          * @param {Object} options 配置项。
          */
-        uploadImage(options: UploadImageOption): void;
+        uploadImage(options?: UploadImageOption): void;
 
         /**
          * 下载图片。
          * @param {Object} options 配置项。
          */
-        downloadImage(options: DownloadImageOption): void;
+        downloadImage(options?: DownloadImageOption): void;
 
         /**
          * 获取本地图片。
          * @param {Object} options 配置项。
          */
-        getLocalImgData(options: GetLocalImgDataOption): void;
+        getLocalImgData(options?: GetLocalImgDataOption): void;
 
         /**
          * 开始录音。
          * @param {Object} options 配置项。
          */
-        startRecord(options: StartRecordOption): void;
+        startRecord(options?: StartRecordOption): void;
 
         /**
          * 停止录音。
          * @param {Object} options 配置项。
          */
-        stopRecord(options: StopRecordOption): void;
+        stopRecord(options?: StopRecordOption): void;
 
         /**
          * 监听录音自动停止。
          * @param {Object} options 配置项。
          */
-        onVoiceRecordEnd(options: OnVoiceRecordEndOption): void;
+        onVoiceRecordEnd(options?: OnVoiceRecordEndOption): void;
 
         /**
          * 播放语音。
          * @param {Object} options 配置项。
          */
-        playVoice(options: PlayVoiceOption): void;
+        playVoice(options?: PlayVoiceOption): void;
 
         /**
          * 暂停播放。
          * @param {Object} options 配置项。
          */
-        pauseVoice(options: PauseVoiceOption): void;
+        pauseVoice(options?: PauseVoiceOption): void;
 
         /**
          * 停止播放接口。
          * @param {Object} options 配置项。
          */
-        stopVoice(options: StopVoiceOption): void;
+        stopVoice(options?: StopVoiceOption): void;
 
         /**
          * 监听语音播放完毕。
          * @param {Object} options 配置项。
          */
-        onVoicePlayEnd(options: OnVoicePlayEndOption): void;
+        onVoicePlayEnd(options?: OnVoicePlayEndOption): void;
 
         /**
          * 上传语音。
          * @param {Object} options 配置项。
          */
-        uploadVoice(options: UploadVoiceOption): void;
+        uploadVoice(options?: UploadVoiceOption): void;
 
         /**
          * 下载语音。
          * @param {Object} options 配置项。
          */
-        downloadVoice(options: DownloadVoiceOption): void;
+        downloadVoice(options?: DownloadVoiceOption): void;
 
         /**
          * 识别音频并返回识别结果。
          * @param {Object} options 配置项。
          */
-        translateVoice(options: TranslateVoiceOption): void;
+        translateVoice(options?: TranslateVoiceOption): void;
 
         /**
          * 获取网络状态。
          * @param {Object} options 配置项。
          */
-        getNetworkType(options: GetNetworkTypeOption): void;
+        getNetworkType(options?: GetNetworkTypeOption): void;
 
         /**
          * 使用微信内置地图查看位置。
          * @param {Object} options 配置项。
          */
-        openLocation(options: OpenLocationOption): void;
+        openLocation(options?: OpenLocationOption): void;
 
         /**
          * 获取地理位置。
          * @param {Object} options 配置项。
          */
-        getLocation(options: GetLocationOption): void;
+        getLocation(options?: GetLocationOption): void;
 
         /**
          * 开启查找周边 iBeacon 设备。
          * @param {Object} options 配置项。
          */
-        startSearchBeacons(options: StartSearchBeaconsOption): void;
+        startSearchBeacons(options?: StartSearchBeaconsOption): void;
 
         /**
          * 关闭查找周边 iBeacon 设备。
@@ -1117,7 +1117,7 @@ declare namespace WechatJssdk {
          * 监听周边 iBeacon 设备。
          * @param {Object} options 配置项。
          */
-        onSearchBeacons(options: OnSearchBeaconsOption): void;
+        onSearchBeacons(options?: OnSearchBeaconsOption): void;
 
         /**
          * 关闭当前网页窗口。
@@ -1138,13 +1138,13 @@ declare namespace WechatJssdk {
          * 批量隐藏功能按钮。
          * @param {Object} options 配置项。
          */
-        hideMenuItems(options: HideMenuItemsOption): void;
+        hideMenuItems(options?: HideMenuItemsOption): void;
 
         /**
          * 批量显示功能按钮。
          * @param {Object} options 配置项。
          */
-        showMenuItems(options: ShowMenuItemsOption): void;
+        showMenuItems(options?: ShowMenuItemsOption): void;
 
         /**
          * 隐藏所有非基础按钮。
@@ -1162,43 +1162,43 @@ declare namespace WechatJssdk {
          * 调起微信扫一扫。
          * @param {Object} options 配置项。
          */
-        scanQRCode(options: ScanQRCodeOption): void;
+        scanQRCode(options?: ScanQRCodeOption): void;
 
         /**
          * 跳转微信商品页。
          * @param {Object} options 配置项。
          */
-        openProductSpecificView(options: OpenProductSpecificViewOption): void;
+        openProductSpecificView(options?: OpenProductSpecificViewOption): void;
 
         /**
          * 拉取适用卡券列表并获取用户选择信息。
          * @param {Object} options 配置项。
          */
-        chooseCard(options: ChooseCardOption): void;
+        chooseCard(options?: ChooseCardOption): void;
 
         /**
          * 批量添加卡券。
          * @param {Object} options 配置项。
          */
-        addCard(options: AddCardOption): void;
+        addCard(options?: AddCardOption): void;
 
         /**
          * 查看微信卡包中的卡券。
          * @param {Object} options 配置项。
          */
-        openCard(options: OpenCardOption): void;
+        openCard(options?: OpenCardOption): void;
 
         /**
          * 发起一个微信支付请求。
          * @param {Object} options 配置项。
          */
-        chooseWXPay(options: ChooseWXPayOption): void;
+        chooseWXPay(options?: ChooseWXPayOption): void;
 
         /**
          * 共享收货地址。
          * @param {Object} options 配置项。
          */
-        openAddress(options: OpenAddressOption): void;
+        openAddress(options?: OpenAddressOption): void;
     }
 }
 
