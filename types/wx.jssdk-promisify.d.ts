@@ -2,17 +2,27 @@
 
 declare namespace WechatJssdk {
     namespace Wx {
-        type PromisifiedCallbackResult<T extends { success?: (...args: any) => any }> = Promise<Parameters<T['success']>[0]>;
+        type PromisifiedCallbackResult<T extends { success?: (...args: any) => any }> = Promise<
+            Parameters<T['success']>[0]
+        >;
     }
 
     interface Wx {
         checkJsApiAsync(options?: CheckJsApiOption): Wx.PromisifiedCallbackResult<CheckJsApiOption>;
 
         /* 分享接口 */
-        updateAppMessageShareDataAsync(options?: UpdateAppMessageShareDataOption): Wx.PromisifiedCallbackResult<UpdateAppMessageShareDataOption>;
-        updateTimelineShareDataAsync(options?: UpdateTimelineShareDataOption): Wx.PromisifiedCallbackResult<UpdateTimelineShareDataOption>;
-        onMenuShareTimelineAsync(options?: OnMenuShareTimelineOption): Wx.PromisifiedCallbackResult<OnMenuShareTimelineOption>;
-        onMenuShareAppMessageAsync(options?: OnMenuShareAppMessageOption): Wx.PromisifiedCallbackResult<OnMenuShareAppMessageOption>;
+        updateAppMessageShareDataAsync(
+            options?: UpdateAppMessageShareDataOption
+        ): Wx.PromisifiedCallbackResult<UpdateAppMessageShareDataOption>;
+        updateTimelineShareDataAsync(
+            options?: UpdateTimelineShareDataOption
+        ): Wx.PromisifiedCallbackResult<UpdateTimelineShareDataOption>;
+        onMenuShareTimelineAsync(
+            options?: OnMenuShareTimelineOption
+        ): Wx.PromisifiedCallbackResult<OnMenuShareTimelineOption>;
+        onMenuShareAppMessageAsync(
+            options?: OnMenuShareAppMessageOption
+        ): Wx.PromisifiedCallbackResult<OnMenuShareAppMessageOption>;
         onMenuShareQQAsync(options?: OnMenuShareQQOption): Wx.PromisifiedCallbackResult<OnMenuShareQQOption>;
         onMenuShareWeiboAsync(options?: OnMenuShareWeiboOption): Wx.PromisifiedCallbackResult<OnMenuShareWeiboOption>;
         onMenuShareQZoneAsync(options?: OnMenuShareQZoneOption): Wx.PromisifiedCallbackResult<OnMenuShareQZoneOption>;
@@ -44,20 +54,30 @@ declare namespace WechatJssdk {
         getLocationAsync(options?: GetLocationOption): Wx.PromisifiedCallbackResult<GetLocationOption>;
 
         /* 摇一摇周边 */
-        startSearchBeaconsAsync(options?: StartSearchBeaconsOption): Wx.PromisifiedCallbackResult<StartSearchBeaconsOption>;
-        stopSearchBeaconsAsync(options?: StopSearchBeaconsOption): Wx.PromisifiedCallbackResult<StopSearchBeaconsOption>;
+        startSearchBeaconsAsync(
+            options?: StartSearchBeaconsOption
+        ): Wx.PromisifiedCallbackResult<StartSearchBeaconsOption>;
+        stopSearchBeaconsAsync(
+            options?: StopSearchBeaconsOption
+        ): Wx.PromisifiedCallbackResult<StopSearchBeaconsOption>;
 
         /* 界面操作 */
         hideMenuItemsAsync(options?: HideMenuItemsOption): Wx.PromisifiedCallbackResult<HideMenuItemsOption>;
         showMenuItemsAsync(options?: ShowMenuItemsOption): Wx.PromisifiedCallbackResult<ShowMenuItemsOption>;
-        hideAllNonBaseMenuItemAsync(options?: HideAllNonBaseMenuItemOption): Wx.PromisifiedCallbackResult<HideAllNonBaseMenuItemOption>;
-        showAllNonBaseMenuItemAsync(options?: ShowAllNonBaseMenuItemOption): Wx.PromisifiedCallbackResult<ShowAllNonBaseMenuItemOption>;
+        hideAllNonBaseMenuItemAsync(
+            options?: HideAllNonBaseMenuItemOption
+        ): Wx.PromisifiedCallbackResult<HideAllNonBaseMenuItemOption>;
+        showAllNonBaseMenuItemAsync(
+            options?: ShowAllNonBaseMenuItemOption
+        ): Wx.PromisifiedCallbackResult<ShowAllNonBaseMenuItemOption>;
 
         /* 微信扫一扫 */
         scanQRCodeAsync(options?: ScanQRCodeOption): Wx.PromisifiedCallbackResult<ScanQRCodeOption>;
 
         /* 微信小店 */
-        openProductSpecificViewAsync(options?: OpenProductSpecificViewOption): Wx.PromisifiedCallbackResult<OpenProductSpecificViewOption>;
+        openProductSpecificViewAsync(
+            options?: OpenProductSpecificViewOption
+        ): Wx.PromisifiedCallbackResult<OpenProductSpecificViewOption>;
 
         /* 微信卡券 */
         chooseCardAsync(options?: ChooseCardOption): Wx.PromisifiedCallbackResult<ChooseCardOption>;

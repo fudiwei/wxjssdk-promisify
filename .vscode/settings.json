@@ -7,7 +7,7 @@
     "editor.formatOnSave": true,
     "editor.insertSpaces": false,
     "editor.tabSize": 4,
-    "editor.wordWrapColumn": 160,
+    "editor.wordWrapColumn": 120,
     "javascript.format.semicolons": "insert",
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "javascript.preferences.quoteStyle": "single",
