@@ -2,7 +2,7 @@
     "name": "@skit/wxjssdk",
     "title": "wx-jssdk",
     "description": "Provide TypeScript declaration for wx-jssdk, and converts callback-based functions to Promises. 为微信 JS-SDK 提供 TypeScript 支持，同时将其基于回调的异步函数转化为 Promise 形式。",
-    "version": "1.6.0",
+    "version": "1.6.0-1",
     "main": "dist/index.js",
     "author": "Fu Diwei",
     "repository": {
