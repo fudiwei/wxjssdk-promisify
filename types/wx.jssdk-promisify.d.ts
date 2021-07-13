@@ -7,7 +7,7 @@ declare namespace WechatJssdk {
             fail?: (...args: any) => void;
             complete?: (...args: any) => void;
         };
-        type PromisifiedCallbackOption<T extends CallbackOption> = Omit<Omit<Omit<T, 'success'>, 'fail'>, 'complete'>;
+        type PromisifiedCallbackOption<T extends CallbackOption> = Omit<T, keyof CallbackOption>;
         type PromisifiedCallbackResult<T extends CallbackOption> = Promise<Parameters<T['success']>[0]>;
     }
 
