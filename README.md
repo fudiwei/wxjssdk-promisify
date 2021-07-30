@@ -3,9 +3,9 @@
 [![NPM Version](https://img.shields.io/npm/v/@skit/wxjssdk.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk)
 [![NPM Download](https://img.shields.io/npm/dm/@skit/wxjssdk.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk)
 [![Dependency Status](https://david-dm.org/fudiwei/wxjssdk.svg)](https://david-dm.org/fudiwei/wxjssdk)
-[![GitHub License](https://img.shields.io/github/license/fudiwei/wxjssdk)](https://github.com/fudiwei/wxjssdk/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/fudiwei/wxjssdk)](https://mit-license.org/)
 
-> 本库内置完整的微信 JS-SDK TypeScript 声明。
+本库内置完整的微信 JS-SDK TypeScript 声明。
 
 ---
 
