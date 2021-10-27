@@ -9,7 +9,7 @@
 
 ## 特性
 
--   将微信小程序中提供的基于回调函数的 API，转化为 Promise 形式（_wx.func_ 将转换成同名的 _wx.funcAsync_ 形式）；
+-   将微信 JS-SDK 中提供的基于回调函数的 API，转化为 Promise 形式（_wx.func_ 将转换成同名的 _wx.funcAsync_ 形式）；
 -   可单独拷贝到项目中使用；
 -   支持 TypeScript；
 -   与微信 JS-SDK（当前版本：1.6.0）同步更新。
