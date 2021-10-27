@@ -1,5 +1,5 @@
 {
-    "name": "@skit/wxjssdk",
+    "name": "@skit/wxjssdk-promisify",
     "title": "wx-jssdk",
     "description": "Provide TypeScript declaration for wx-jssdk, and converts callback-based functions to Promises. 为微信 JS-SDK 提供 TypeScript 支持，同时将其基于回调的异步函数转化为 Promise 形式。",
     "version": "1.6.0-1",
@@ -7,7 +7,7 @@
     "author": "Fu Diwei",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fudiwei/wxjssdk.git"
+        "url": "https://github.com/fudiwei/wxjssdk-promisify.git"
     },
     "license": "MIT",
     "scripts": {
@@ -26,7 +26,7 @@
         "@babel/preset-env": "^7.12.13",
         "@typescript-eslint/eslint-plugin": "^4.14.2",
         "@typescript-eslint/parser": "^4.14.2",
-        "eslint": "^7.19.0",
+        "eslint": "^7.32.0",
         "eslint-config-standard": "^16.0.2",
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-node": "^11.1.0",
