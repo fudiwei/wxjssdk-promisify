@@ -1,11 +1,9 @@
-# @skit/wxjssdk
+# @skit/wxjssdk-promisify
 
-[![NPM Version](https://img.shields.io/npm/v/@skit/wxjssdk.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk)
-[![NPM Download](https://img.shields.io/npm/dm/@skit/wxjssdk.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk)
-[![Dependency Status](https://david-dm.org/fudiwei/wxjssdk.svg)](https://david-dm.org/fudiwei/wxjssdk)
-[![License](https://img.shields.io/github/license/fudiwei/wxjssdk)](https://mit-license.org/)
-
-本库内置完整的微信 JS-SDK TypeScript 声明。
+[![NPM Version](https://img.shields.io/npm/v/@skit/wxjssdk-promisify.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk-promisify)
+[![NPM Download](https://img.shields.io/npm/dm/@skit/wxjssdk-promisify.svg?sanitize=true)](https://www.npmjs.com/package/@skit/wxjssdk-promisify)
+[![Dependency Status](https://david-dm.org/fudiwei/wxjssdk-promisify.svg)](https://david-dm.org/fudiwei/wxjssdk-promisify)
+[![License](https://img.shields.io/github/license/fudiwei/wxjssdk-promisify)](https://mit-license.org/)
 
 ---
 
@@ -23,17 +21,18 @@
 安装：
 
 ```shell
-npm install @skit/wxjssdk
+npm install @skit/wxjssdk-promisify
 ```
 
 导入：
 
 ```javascript
-import wxmini from '@skit/wxjssdk';
+import wxmini from '@skit/wxjssdk-promisify';
 
 wxmini.promisify({
-    root: wx, // 指定异步方法挂载到某个对象的属性上。默认挂载到 wx。
-    extends: ['checkJsApi'] // 若 JS-SDK 新增了某些 API 而该库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
+    root: wx, // （可选）指定异步方法挂载到某个对象的属性上。默认挂载到 wx。
+    extends: ['checkJsApi'], // （可选）若 JS-SDK 新增了某些 API 而该库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
+    enableCompatible: true // （可选）指示是否为低版本 JS-SDK提供覆写，防止抛出 NPE。默认值为 true。
 });
 ```
 

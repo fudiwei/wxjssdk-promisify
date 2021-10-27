@@ -12,6 +12,10 @@ declare namespace SKIT.WxJssdkPromisify {
          * 若基础库新增了某些 API 而该库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
          */
         extends?: Array<string>;
+        /**
+         * 是否为兼容低版本 JS-SDK。默认值为 true。
+         */
+        enableCompatible?: boolean;
     }
 
     interface WxJssdk {
