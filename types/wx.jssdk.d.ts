@@ -74,14 +74,15 @@ declare namespace WechatJssdk {
         | 'menuItem:addContact'
         /* 传播类 */
         | 'menuItem:share:appMessage'
+        | 'menuItem:share:wechat'
         | 'menuItem:share:timeline'
         | 'menuItem:share:qq'
         | 'menuItem:share:weiboApp'
-        | 'menuItem:favorite'
         | 'menuItem:share:facebook'
         | 'menuItem:share:QZone'
         | 'menuItem:share:email'
         | 'menuItem:share:brand'
+        | 'menuItem:favorite'
         /* 保护类 */
         | 'menuItem:editTag'
         | 'menuItem:delete'
