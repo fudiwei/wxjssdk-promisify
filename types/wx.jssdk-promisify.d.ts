@@ -139,15 +139,34 @@ declare namespace WechatJssdk {
         openCardAsync(
             options?: Wx.PromisifiedCallbackOption<OpenCardOption>
         ): Wx.PromisifiedCallbackResult<OpenCardOption>;
+        consumeAndShareCardAsync(
+            options?: Wx.PromisifiedCallbackOption<ConsumeAndShareCardOption>
+        ): Wx.PromisifiedCallbackResult<ConsumeAndShareCardOption>;
 
         /* 微信支付 */
         chooseWXPayAsync(
             options?: Wx.PromisifiedCallbackOption<ChooseWXPayOption>
         ): Wx.PromisifiedCallbackResult<ChooseWXPayOption>;
+        openBusinessViewAsync(
+            options?: Wx.PromisifiedCallbackOption<OpenBusinessViewOption>
+        ): Wx.PromisifiedCallbackResult<OpenBusinessViewOption>;
 
         /* 快速输入 */
         openAddressAsync(
             options?: Wx.PromisifiedCallbackOption<OpenAddressOption>
         ): Wx.PromisifiedCallbackResult<OpenAddressOption>;
+
+        /* 小程序 */
+        launchMiniProgramAsync(
+            options?: Wx.PromisifiedCallbackOption<LaunchMiniProgramOption>
+        ): Wx.PromisifiedCallbackResult<LaunchMiniProgramOption>;
+
+        /* 企业微信 */
+        openEnterpriseRedPacketAsync(
+            options?: Wx.PromisifiedCallbackOption<OpenEnterpriseRedPacketOption>
+        ): Wx.PromisifiedCallbackResult<OpenEnterpriseRedPacketOption>;
+        openEnterpriseChatAsync(
+            options?: Wx.PromisifiedCallbackOption<OpenEnterpriseChatOption>
+        ): Wx.PromisifiedCallbackResult<OpenEnterpriseChatOption>;
     }
 }

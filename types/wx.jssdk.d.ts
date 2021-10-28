@@ -51,10 +51,17 @@ declare namespace WechatJssdk {
         | 'chooseCard'
         | 'addCard'
         | 'openCard'
+        | 'consumeAndShareCard'
         /* 微信支付 */
         | 'chooseWXPay'
+        | 'openBusinessView'
         /* 快速输入 */
-        | 'openAddress';
+        | 'openAddress'
+        /* 小程序 */
+        | 'launchMiniProgram'
+        /* 企业微信 */
+        | 'openEnterpriseRedPacket'
+        | 'openEnterpriseChat';
 
     type MenuNames =
         /* 基本类 */
@@ -851,6 +858,21 @@ declare namespace WechatJssdk {
         complete?: (res?: GeneralCallbackResult) => void;
     }
 
+    interface ConsumeAndShareCardOption {
+        /**
+         * @property {String} 卡券 ID。
+         */
+        cardId?: string;
+        /**
+         * @property {String} 卡券 Code。
+         */
+        code?: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
     interface ChooseWXPayOption {
         /**
          * @property {String} 支付签名时间戳。
@@ -875,6 +897,26 @@ declare namespace WechatJssdk {
 
         cancel?: (res?: GeneralCallbackResult) => void;
         success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface OpenBusinessViewOption {
+        /**
+         * @property {String} 跳转类型。
+         */
+        businessType: string;
+        /**
+         * @property {String} 页面参数。
+         */
+        queryString: string;
+        /**
+         * @property {String} 版本。
+         */
+        envVersion?: string;
+
+        cancel?: (res?: GeneralCallbackResult) => void;
+        success?: (res?: OpenAddressSuccessCallbackResult) => void;
         fail?: (res?: GeneralCallbackResult) => void;
         complete?: (res?: GeneralCallbackResult) => void;
     }
@@ -919,6 +961,127 @@ declare namespace WechatJssdk {
          * @property {String} 收货人手机号码。
          */
         telNumber: string;
+    }
+
+    interface LaunchMiniProgramOption {
+        /**
+         * @property {String} 目标小程序 AppId。
+         */
+        targetAppId: string;
+        /**
+         * @property {String} 小程序页面路径。
+         */
+        path: string;
+        /**
+         * @property {String} 小程序版本。
+         */
+        envVersion?: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface OpenEnterpriseRedPacketOption {
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface OpenEnterpriseChatOption {
+        /**
+         * @property {String} 参与会话的企业成员列表，用逗号隔开。
+         */
+        userIds?: string;
+        /**
+         * @property {String} 参与会话的外部联系人列表，用逗号隔开。
+         */
+        externalUserIds?: string;
+        /**
+         * @property {String} 会话名称。
+         */
+        groupName?: string;
+        /**
+         * @property {String} 会话 ID。
+         */
+        chatId?: string;
+
+        success?: (res?: OpenEnterpriseChatSuccessCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface OpenEnterpriseChatSuccessCallbackResult extends GeneralCallbackResult {
+        /**
+         * @property {String} 会话 ID。
+         */
+        chatId: string;
+    }
+
+    interface MiniProgramNavigateToOption {
+        /**
+         * @property {String} 需要跳转的页面路径。
+         */
+        url: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface MiniProgramNavigateBackOption {
+        /**
+         * @property {Number} 返回的页面数。
+         */
+        delta?: number;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface MiniProgramSwitchTabOption {
+        /**
+         * @property {String} 需要跳转的页面路径。
+         */
+        url: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface MiniProgramReLaunchOption {
+        /**
+         * @property {String} 需要跳转的页面路径。
+         */
+        url: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface MiniProgramRedirectToOption {
+        /**
+         * @property {String} 需要跳转的页面路径。
+         */
+        url: string;
+
+        success?: (res?: GeneralCallbackResult) => void;
+        fail?: (res?: GeneralCallbackResult) => void;
+        complete?: (res?: GeneralCallbackResult) => void;
+    }
+
+    interface MiniProgramPostMessageOption {
+        data: any;
+    }
+
+    interface MiniProgramGetEnvCallbackResult extends GeneralCallbackResult {
+        /**
+         * @property {Boolean} 是否在小程序环境下。
+         */
+        miniprogram?: boolean;
     }
 
     interface Wx {
@@ -1189,16 +1352,93 @@ declare namespace WechatJssdk {
         openCard(options?: OpenCardOption): void;
 
         /**
+         * 使用微信卡包中的卡券。
+         * @param {Object} options 配置项。
+         */
+        ConsumeAndShareCard(options?: ConsumeAndShareCardOption): void;
+
+        /**
          * 发起一个微信支付请求。
          * @param {Object} options 配置项。
          */
         chooseWXPay(options?: ChooseWXPayOption): void;
 
         /**
+         * 调起微信支付分。
+         * @param {Object} options 配置项。
+         */
+        openBusinessView(options?: OpenBusinessViewOption): void;
+
+        /**
          * 共享收货地址。
          * @param {Object} options 配置项。
          */
         openAddress(options?: OpenAddressOption): void;
+
+        /**
+         * 跳转到小程序。
+         * @param {Object} options 配置项。
+         */
+        launchMiniProgramOption(options?: LaunchMiniProgramOption): void;
+
+        /**
+         * 打开企业微信红包。
+         * @param {Object} options 配置项。
+         */
+        openEnterpriseRedPacket(options?: OpenEnterpriseRedPacketOption): void;
+
+        /**
+         * 打开企业微信聊天。
+         * @param {Object} options 配置项。
+         */
+        openEnterpriseChat(options?: OpenEnterpriseChatOption): void;
+
+        /**
+         * 小程序相关接口。
+         */
+        miniProgram: {
+            /**
+             * 处理成功的回调方法。
+             * @param {Object} options 配置项。
+             */
+            navigateTo(options?: MiniProgramNavigateToOption): void;
+
+            /**
+             * 处理成功的回调方法。
+             * @param {Object} options 配置项。
+             */
+            navigateBack(options?: MiniProgramNavigateBackOption): void;
+
+            /**
+             * 处理成功的回调方法。
+             * @param {Object} options 配置项。
+             */
+            switchTab(options?: MiniProgramSwitchTabOption): void;
+
+            /**
+             * 处理成功的回调方法。
+             * @param {Object} options 配置项。
+             */
+            reLaunch(options?: MiniProgramReLaunchOption): void;
+
+            /**
+             * 处理成功的回调方法。
+             * @param {Object} options 配置项。
+             */
+            redirectTo(options?: MiniProgramRedirectToOption): void;
+
+            /**
+             * 向小程序发送消息。
+             * @param {Object} options 配置项。
+             */
+            postMessage(options?: MiniProgramPostMessageOption): void;
+
+            /**
+             * 获取当前环境 。
+             * @param {Function} callback 回调函数。
+             */
+            getEnv(callback: (res?: MiniProgramGetEnvCallbackResult) => void): void;
+        };
     }
 }
 

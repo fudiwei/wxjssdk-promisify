@@ -59,12 +59,21 @@ const promisyFuncs = [
     'chooseCard',
     'addCard',
     'openCard',
+    'consumeAndShareCard',
 
     /* 微信支付 */
     'chooseWXPay',
+    'openBusinessView',
 
     /* 快速输入 */
-    'openAddress'
+    'openAddress',
+
+    /* 小程序 */
+    'launchMiniProgram',
+
+    /* 企业微信 */
+    'openEnterpriseRedPacket',
+    'openEnterpriseChat'
 ];
 
 /**
