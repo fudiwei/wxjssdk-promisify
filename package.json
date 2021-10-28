@@ -29,7 +29,7 @@
         "promise",
         "promisify"
     ],
-    "version": "1.6.0",
+    "version": "1.6.0-1",
     "main": "dist/index.js",
     "author": "Fu Diwei",
     "repository": {
