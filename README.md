@@ -31,8 +31,8 @@ import wxmini from '@skit/wxjssdk-promisify';
 
 wxmini.promisify({
     root: wx, // （可选）指定异步方法挂载到某个对象的属性上。默认挂载到 wx。
-    extends: ['checkJsApi'], // （可选）若 JS-SDK 新增了某些 API 而该库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
-    enableCompatible: true // （可选）指示是否为低版本 JS-SDK提供覆写，防止抛出 NPE。默认值为 true。
+    extends: ['checkJsApi'], // （可选）若 JS-SDK 新增了某些 API 而本库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
+    enableCompatible: true // （可选）指示是否为低版本 JS-SDK 提供覆写，防止抛出 NPE（这些方法会在调用后直接进入 fail/catch 回调）。默认值为 true。
 });
 ```
 

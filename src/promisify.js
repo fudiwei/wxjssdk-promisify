@@ -80,7 +80,7 @@ const promisyFuncs = [
  *
  * @param {Object} options
  * @param {Object} [options.root] 指定异步方法挂载到某个对象的属性上。默认挂载到 wx。
- * @param {Array} [options.extends] 若 JS-SDK 新增了某些 API 而该库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
+ * @param {Array} [options.extends] 若 JS-SDK 新增了某些 API 而本库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
  * @param {Boolean} [options.enableCompatible] 是否为兼容低版本 JS-SDK。默认值为 true。
  */
 module.exports = (options = {}) => {
