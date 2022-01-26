@@ -1,5 +1,8 @@
 .project
 .settings
+.idea
+.vscode
+!.vscode/settings.json
 .vs
 .svn
 *~
@@ -10,6 +13,9 @@
 .sizecache.json
 
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 /node_modules
 

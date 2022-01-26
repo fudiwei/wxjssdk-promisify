@@ -3,8 +3,7 @@ const gulp$babel = require('gulp-babel'),
     gulp$eslint = require('gulp-eslint'),
     gulp$rimraf = require('gulp-rimraf'),
     gulp$strip = require('gulp-strip-debug'),
-    gulp$uglify = require('gulp-uglify'),
-    gulp$util = require('gulp-util');
+    gulp$uglify = require('gulp-uglify');
 
 gulp.task('clean', () => {
     return gulp
@@ -34,7 +33,7 @@ gulp.task('dist', gulp.series('clean', () => {
             ]
         ]
     };
-    
+
     return gulp
         .src(['src/**/*.js'])
         .pipe(gulp$strip())
