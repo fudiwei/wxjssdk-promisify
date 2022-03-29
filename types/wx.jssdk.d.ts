@@ -771,6 +771,10 @@ declare namespace WechatJssdk {
          * @property {Number} 页面类型。
          */
         viewType?: ProductSpecificViewTypes;
+        /**
+         * @property {Object} 额外信息。
+         */
+        extInfo?: any;
 
         success?: (res?: GeneralCallbackResult) => void;
         fail?: (res?: GeneralCallbackResult) => void;
@@ -814,9 +818,9 @@ declare namespace WechatJssdk {
 
     interface ChooseCardSuccessCallbackResult extends GeneralCallbackResult {
         /**
-         * @property {Array} 卡券列表。
+         * @property {String} 卡券列表的 JSON 格式字符串。
          */
-        cardList?: any[];
+        cardList: string;
     }
 
     interface AddCardOption {
@@ -1085,7 +1089,7 @@ declare namespace WechatJssdk {
         miniprogram?: boolean;
     }
 
-    interface Wx {
+    export interface Wx {
         /**
          * 注入权限验证配置。
          * @param {Object} options 配置项。
@@ -1356,7 +1360,7 @@ declare namespace WechatJssdk {
          * 使用微信卡包中的卡券。
          * @param {Object} options 配置项。
          */
-        ConsumeAndShareCard(options?: ConsumeAndShareCardOption): void;
+        consumeAndShareCard(options?: ConsumeAndShareCardOption): void;
 
         /**
          * 发起一个微信支付请求。

@@ -14,10 +14,9 @@ module.exports = {
         ecmaVersion: 6
     },
     rules: {
-        'no-console': 'off',
-        'no-extra-boolean-cast': 'off',
-        'promise/avoid-new': 'off',
-        'promise/no-return-wrap': 'off',
+        'prettier/prettier': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/triple-slash-reference': 'off'
     }
 };

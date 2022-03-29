@@ -7,166 +7,130 @@ declare namespace WechatJssdk {
             fail?: (...args: any) => void;
             complete?: (...args: any) => void;
         };
-        type PromisifiedCallbackOption<T extends CallbackOption> = Omit<T, keyof CallbackOption>;
-        type PromisifiedCallbackResult<T extends CallbackOption> = Promise<Parameters<T['success']>[0]>;
+        type PromisifiedOption<T extends CallbackOption> = Omit<T, keyof CallbackOption>;
+        type PromisifiedResult<T extends CallbackOption> = Promise<Parameters<T['success']>[0]>;
     }
 
     interface Wx {
-        checkJsApiAsync(
-            options?: Wx.PromisifiedCallbackOption<CheckJsApiOption>
-        ): Wx.PromisifiedCallbackResult<CheckJsApiOption>;
+        checkJsApiAsync(options?: Wx.PromisifiedOption<CheckJsApiOption>): Wx.PromisifiedResult<CheckJsApiOption>;
 
         /* 分享接口 */
         updateAppMessageShareDataAsync(
-            options?: Wx.PromisifiedCallbackOption<UpdateAppMessageShareDataOption>
-        ): Wx.PromisifiedCallbackResult<UpdateAppMessageShareDataOption>;
+            options?: Wx.PromisifiedOption<UpdateAppMessageShareDataOption>
+        ): Wx.PromisifiedResult<UpdateAppMessageShareDataOption>;
         updateTimelineShareDataAsync(
-            options?: Wx.PromisifiedCallbackOption<UpdateTimelineShareDataOption>
-        ): Wx.PromisifiedCallbackResult<UpdateTimelineShareDataOption>;
+            options?: Wx.PromisifiedOption<UpdateTimelineShareDataOption>
+        ): Wx.PromisifiedResult<UpdateTimelineShareDataOption>;
         onMenuShareTimelineAsync(
-            options?: Wx.PromisifiedCallbackOption<OnMenuShareTimelineOption>
-        ): Wx.PromisifiedCallbackResult<OnMenuShareTimelineOption>;
+            options?: Wx.PromisifiedOption<OnMenuShareTimelineOption>
+        ): Wx.PromisifiedResult<OnMenuShareTimelineOption>;
         onMenuShareAppMessageAsync(
-            options?: Wx.PromisifiedCallbackOption<OnMenuShareAppMessageOption>
-        ): Wx.PromisifiedCallbackResult<OnMenuShareAppMessageOption>;
+            options?: Wx.PromisifiedOption<OnMenuShareAppMessageOption>
+        ): Wx.PromisifiedResult<OnMenuShareAppMessageOption>;
         onMenuShareQQAsync(
-            options?: Wx.PromisifiedCallbackOption<OnMenuShareQQOption>
-        ): Wx.PromisifiedCallbackResult<OnMenuShareQQOption>;
+            options?: Wx.PromisifiedOption<OnMenuShareQQOption>
+        ): Wx.PromisifiedResult<OnMenuShareQQOption>;
         onMenuShareWeiboAsync(
-            options?: Wx.PromisifiedCallbackOption<OnMenuShareWeiboOption>
-        ): Wx.PromisifiedCallbackResult<OnMenuShareWeiboOption>;
+            options?: Wx.PromisifiedOption<OnMenuShareWeiboOption>
+        ): Wx.PromisifiedResult<OnMenuShareWeiboOption>;
         onMenuShareQZoneAsync(
-            options?: Wx.PromisifiedCallbackOption<OnMenuShareQZoneOption>
-        ): Wx.PromisifiedCallbackResult<OnMenuShareQZoneOption>;
+            options?: Wx.PromisifiedOption<OnMenuShareQZoneOption>
+        ): Wx.PromisifiedResult<OnMenuShareQZoneOption>;
 
         /* 图像接口 */
-        chooseImageAsync(
-            options?: Wx.PromisifiedCallbackOption<ChooseImageOption>
-        ): Wx.PromisifiedCallbackResult<ChooseImageOption>;
-        previewImageAsync(
-            options?: Wx.PromisifiedCallbackOption<PreviewImageOption>
-        ): Wx.PromisifiedCallbackResult<PreviewImageOption>;
-        uploadImageAsync(
-            options?: Wx.PromisifiedCallbackOption<UploadImageOption>
-        ): Wx.PromisifiedCallbackResult<UploadImageOption>;
+        chooseImageAsync(options?: Wx.PromisifiedOption<ChooseImageOption>): Wx.PromisifiedResult<ChooseImageOption>;
+        previewImageAsync(options?: Wx.PromisifiedOption<PreviewImageOption>): Wx.PromisifiedResult<PreviewImageOption>;
+        uploadImageAsync(options?: Wx.PromisifiedOption<UploadImageOption>): Wx.PromisifiedResult<UploadImageOption>;
         downloadImageAsync(
-            options?: Wx.PromisifiedCallbackOption<DownloadImageOption>
-        ): Wx.PromisifiedCallbackResult<DownloadImageOption>;
+            options?: Wx.PromisifiedOption<DownloadImageOption>
+        ): Wx.PromisifiedResult<DownloadImageOption>;
         getLocalImgDataAsync(
-            options?: Wx.PromisifiedCallbackOption<GetLocalImgDataOption>
-        ): Wx.PromisifiedCallbackResult<GetLocalImgDataOption>;
+            options?: Wx.PromisifiedOption<GetLocalImgDataOption>
+        ): Wx.PromisifiedResult<GetLocalImgDataOption>;
 
         /* 音频接口 */
-        startRecordAsync(
-            options?: Wx.PromisifiedCallbackOption<StartRecordOption>
-        ): Wx.PromisifiedCallbackResult<StartRecordOption>;
-        stopRecordAsync(
-            options?: Wx.PromisifiedCallbackOption<StopRecordOption>
-        ): Wx.PromisifiedCallbackResult<StopRecordOption>;
-        playVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<PlayVoiceOption>
-        ): Wx.PromisifiedCallbackResult<PlayVoiceOption>;
-        pauseVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<PauseVoiceOption>
-        ): Wx.PromisifiedCallbackResult<PauseVoiceOption>;
-        stopVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<StopVoiceOption>
-        ): Wx.PromisifiedCallbackResult<StopVoiceOption>;
-        uploadVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<UploadVoiceOption>
-        ): Wx.PromisifiedCallbackResult<UploadVoiceOption>;
+        startRecordAsync(options?: Wx.PromisifiedOption<StartRecordOption>): Wx.PromisifiedResult<StartRecordOption>;
+        stopRecordAsync(options?: Wx.PromisifiedOption<StopRecordOption>): Wx.PromisifiedResult<StopRecordOption>;
+        playVoiceAsync(options?: Wx.PromisifiedOption<PlayVoiceOption>): Wx.PromisifiedResult<PlayVoiceOption>;
+        pauseVoiceAsync(options?: Wx.PromisifiedOption<PauseVoiceOption>): Wx.PromisifiedResult<PauseVoiceOption>;
+        stopVoiceAsync(options?: Wx.PromisifiedOption<StopVoiceOption>): Wx.PromisifiedResult<StopVoiceOption>;
+        uploadVoiceAsync(options?: Wx.PromisifiedOption<UploadVoiceOption>): Wx.PromisifiedResult<UploadVoiceOption>;
         downloadVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<DownloadVoiceOption>
-        ): Wx.PromisifiedCallbackResult<DownloadVoiceOption>;
+            options?: Wx.PromisifiedOption<DownloadVoiceOption>
+        ): Wx.PromisifiedResult<DownloadVoiceOption>;
 
         /* 智能接口 */
         translateVoiceAsync(
-            options?: Wx.PromisifiedCallbackOption<TranslateVoiceOption>
-        ): Wx.PromisifiedCallbackResult<TranslateVoiceOption>;
+            options?: Wx.PromisifiedOption<TranslateVoiceOption>
+        ): Wx.PromisifiedResult<TranslateVoiceOption>;
 
         /* 设备信息 */
         getNetworkTypeAsync(
-            options?: Wx.PromisifiedCallbackOption<GetNetworkTypeOption>
-        ): Wx.PromisifiedCallbackResult<GetNetworkTypeOption>;
+            options?: Wx.PromisifiedOption<GetNetworkTypeOption>
+        ): Wx.PromisifiedResult<GetNetworkTypeOption>;
 
         /* 地理位置 */
-        openLocationAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenLocationOption>
-        ): Wx.PromisifiedCallbackResult<OpenLocationOption>;
-        getLocationAsync(
-            options?: Wx.PromisifiedCallbackOption<GetLocationOption>
-        ): Wx.PromisifiedCallbackResult<GetLocationOption>;
+        openLocationAsync(options?: Wx.PromisifiedOption<OpenLocationOption>): Wx.PromisifiedResult<OpenLocationOption>;
+        getLocationAsync(options?: Wx.PromisifiedOption<GetLocationOption>): Wx.PromisifiedResult<GetLocationOption>;
 
         /* 摇一摇周边 */
         startSearchBeaconsAsync(
-            options?: Wx.PromisifiedCallbackOption<StartSearchBeaconsOption>
-        ): Wx.PromisifiedCallbackResult<StartSearchBeaconsOption>;
+            options?: Wx.PromisifiedOption<StartSearchBeaconsOption>
+        ): Wx.PromisifiedResult<StartSearchBeaconsOption>;
         stopSearchBeaconsAsync(
-            options?: Wx.PromisifiedCallbackOption<StopSearchBeaconsOption>
-        ): Wx.PromisifiedCallbackResult<StopSearchBeaconsOption>;
+            options?: Wx.PromisifiedOption<StopSearchBeaconsOption>
+        ): Wx.PromisifiedResult<StopSearchBeaconsOption>;
 
         /* 界面操作 */
         hideMenuItemsAsync(
-            options?: Wx.PromisifiedCallbackOption<HideMenuItemsOption>
-        ): Wx.PromisifiedCallbackResult<HideMenuItemsOption>;
+            options?: Wx.PromisifiedOption<HideMenuItemsOption>
+        ): Wx.PromisifiedResult<HideMenuItemsOption>;
         showMenuItemsAsync(
-            options?: Wx.PromisifiedCallbackOption<ShowMenuItemsOption>
-        ): Wx.PromisifiedCallbackResult<ShowMenuItemsOption>;
+            options?: Wx.PromisifiedOption<ShowMenuItemsOption>
+        ): Wx.PromisifiedResult<ShowMenuItemsOption>;
         hideAllNonBaseMenuItemAsync(
-            options?: Wx.PromisifiedCallbackOption<HideAllNonBaseMenuItemOption>
-        ): Wx.PromisifiedCallbackResult<HideAllNonBaseMenuItemOption>;
+            options?: Wx.PromisifiedOption<HideAllNonBaseMenuItemOption>
+        ): Wx.PromisifiedResult<HideAllNonBaseMenuItemOption>;
         showAllNonBaseMenuItemAsync(
-            options?: Wx.PromisifiedCallbackOption<ShowAllNonBaseMenuItemOption>
-        ): Wx.PromisifiedCallbackResult<ShowAllNonBaseMenuItemOption>;
+            options?: Wx.PromisifiedOption<ShowAllNonBaseMenuItemOption>
+        ): Wx.PromisifiedResult<ShowAllNonBaseMenuItemOption>;
 
         /* 微信扫一扫 */
-        scanQRCodeAsync(
-            options?: Wx.PromisifiedCallbackOption<ScanQRCodeOption>
-        ): Wx.PromisifiedCallbackResult<ScanQRCodeOption>;
+        scanQRCodeAsync(options?: Wx.PromisifiedOption<ScanQRCodeOption>): Wx.PromisifiedResult<ScanQRCodeOption>;
 
         /* 微信小店 */
         openProductSpecificViewAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenProductSpecificViewOption>
-        ): Wx.PromisifiedCallbackResult<OpenProductSpecificViewOption>;
+            options?: Wx.PromisifiedOption<OpenProductSpecificViewOption>
+        ): Wx.PromisifiedResult<OpenProductSpecificViewOption>;
 
         /* 微信卡券 */
-        chooseCardAsync(
-            options?: Wx.PromisifiedCallbackOption<ChooseCardOption>
-        ): Wx.PromisifiedCallbackResult<ChooseCardOption>;
-        addCardAsync(
-            options?: Wx.PromisifiedCallbackOption<AddCardOption>
-        ): Wx.PromisifiedCallbackResult<AddCardOption>;
-        openCardAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenCardOption>
-        ): Wx.PromisifiedCallbackResult<OpenCardOption>;
+        chooseCardAsync(options?: Wx.PromisifiedOption<ChooseCardOption>): Wx.PromisifiedResult<ChooseCardOption>;
+        addCardAsync(options?: Wx.PromisifiedOption<AddCardOption>): Wx.PromisifiedResult<AddCardOption>;
+        openCardAsync(options?: Wx.PromisifiedOption<OpenCardOption>): Wx.PromisifiedResult<OpenCardOption>;
         consumeAndShareCardAsync(
-            options?: Wx.PromisifiedCallbackOption<ConsumeAndShareCardOption>
-        ): Wx.PromisifiedCallbackResult<ConsumeAndShareCardOption>;
+            options?: Wx.PromisifiedOption<ConsumeAndShareCardOption>
+        ): Wx.PromisifiedResult<ConsumeAndShareCardOption>;
 
         /* 微信支付 */
-        chooseWXPayAsync(
-            options?: Wx.PromisifiedCallbackOption<ChooseWXPayOption>
-        ): Wx.PromisifiedCallbackResult<ChooseWXPayOption>;
+        chooseWXPayAsync(options?: Wx.PromisifiedOption<ChooseWXPayOption>): Wx.PromisifiedResult<ChooseWXPayOption>;
         openBusinessViewAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenBusinessViewOption>
-        ): Wx.PromisifiedCallbackResult<OpenBusinessViewOption>;
+            options?: Wx.PromisifiedOption<OpenBusinessViewOption>
+        ): Wx.PromisifiedResult<OpenBusinessViewOption>;
 
         /* 快速输入 */
-        openAddressAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenAddressOption>
-        ): Wx.PromisifiedCallbackResult<OpenAddressOption>;
+        openAddressAsync(options?: Wx.PromisifiedOption<OpenAddressOption>): Wx.PromisifiedResult<OpenAddressOption>;
 
         /* 小程序 */
         launchMiniProgramAsync(
-            options?: Wx.PromisifiedCallbackOption<LaunchMiniProgramOption>
-        ): Wx.PromisifiedCallbackResult<LaunchMiniProgramOption>;
+            options?: Wx.PromisifiedOption<LaunchMiniProgramOption>
+        ): Wx.PromisifiedResult<LaunchMiniProgramOption>;
 
         /* 企业微信 */
         openEnterpriseRedPacketAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenEnterpriseRedPacketOption>
-        ): Wx.PromisifiedCallbackResult<OpenEnterpriseRedPacketOption>;
+            options?: Wx.PromisifiedOption<OpenEnterpriseRedPacketOption>
+        ): Wx.PromisifiedResult<OpenEnterpriseRedPacketOption>;
         openEnterpriseChatAsync(
-            options?: Wx.PromisifiedCallbackOption<OpenEnterpriseChatOption>
-        ): Wx.PromisifiedCallbackResult<OpenEnterpriseChatOption>;
+            options?: Wx.PromisifiedOption<OpenEnterpriseChatOption>
+        ): Wx.PromisifiedResult<OpenEnterpriseChatOption>;
     }
 }

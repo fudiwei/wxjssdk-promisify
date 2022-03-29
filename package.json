@@ -29,7 +29,7 @@
         "promise",
         "promisify"
     ],
-    "version": "1.6.0-1",
+    "version": "1.6.0",
     "main": "dist/index.js",
     "author": "Fu Diwei",
     "repository": {
@@ -55,12 +55,12 @@
         "pnpm": ">=6"
     },
     "devDependencies": {
-        "@babel/core": "^7.16.12",
+        "@babel/core": "7.17.8",
         "@babel/preset-env": "^7.16.11",
-        "@typescript-eslint/eslint-plugin": "^5.10.1",
-        "@typescript-eslint/parser": "^5.10.1",
-        "eslint": "^8.7.0",
-        "eslint-config-prettier": "^8.3.0",
+        "@typescript-eslint/eslint-plugin": "5.17.0",
+        "@typescript-eslint/parser": "5.17.0",
+        "eslint": "8.12.0",
+        "eslint-config-prettier": "8.5.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-prettier": "^4.0.0",
         "gulp": "^4.0.2",
@@ -69,8 +69,8 @@
         "gulp-rimraf": "^1.0.0",
         "gulp-strip-debug": "^4.0.0",
         "gulp-uglify": "^3.0.2",
-        "prettier": "^2.5.1",
-        "typescript": "~4.5.5"
+        "prettier": "2.6.1",
+        "typescript": "~4.6.0"
     },
     "peerDependencies": {
         "weixin-js-sdk": "~1.6.0"

@@ -27,43 +27,41 @@ npm install @skit/wxjssdk-promisify
 导入：
 
 ```javascript
-import wxmini from '@skit/wxjssdk-promisify';
+const $ = require('@skit/wxjssdk-promisify');
 
-wxmini.promisify({
+$.promisifyAll({
     root: wx, // （可选）指定异步方法挂载到某个对象的属性上。默认挂载到 wx。
-    extends: ['checkJsApi'], // （可选）若 JS-SDK 新增了某些 API 而本库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
-    enableCompatible: true // （可选）指示是否为低版本 JS-SDK 提供覆写，防止抛出 NPE（这些方法会在调用后直接进入 fail/catch 回调）。默认值为 true。
+    extends: ['checkJsApi'] // （可选）若 JS-SDK 新增了某些 API 而本库尚未更新，可由此传入相应的方法名数组以转换成异步方法。
 });
 ```
 
 使用异步方法：
 
 ```javascript
-// 原始方法
+wx.checkJsApiAsync({ jsApiList: ['chooseWXPay'] })
+    .then((res) => {
+        console.info('success', res.checkResult);
+    })
+    .catch((err) => {
+        console.error('fail', err);
+    })
+    .finally(() => {
+        console.log('complete');
+    });
+
+/**
+ * @example 以上示例代码等同于下方原生实现：
+ */
 wx.checkJsApi({
     jsApiList: ['chooseWXPay'],
     success: (res) => {
-        console.info(res.checkResult);
+        console.info('success', res.checkResult);
     },
     fail: (err) => {
-        console.error(err);
+        console.error('fail', err);
     },
     complete: () => {
-        // Do Something
+        console.log('complete');
     }
 });
-
-// Promise 方法
-wx.checkJsApiAsync({
-    jsApiList: ['chooseWXPay']
-})
-    .then((res) => {
-        console.info(res.checkResult);
-    })
-    .catch((err) => {
-        console.error(err);
-    })
-    .finally(() => {
-        // Do Something
-    });
 ```
