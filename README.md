@@ -18,13 +18,13 @@
 
 ## 用法
 
-安装：
+### 安装：
 
 ```shell
 npm install @skit/wxjssdk-promisify
 ```
 
-导入：
+### 导入：
 
 ```javascript
 const $ = require('@skit/wxjssdk-promisify');
@@ -35,7 +35,7 @@ $.promisifyAll({
 });
 ```
 
-使用异步方法：
+### 使用异步方法：
 
 ```javascript
 wx.checkJsApiAsync({ jsApiList: ['chooseWXPay'] })
