@@ -1,6 +1,4 @@
-const isCallable = (fn) => 'function' === typeof fn;
-
-const callbackApiNames = [
+const _apis = [
     'checkJsApi',
 
     /* 分享接口 */
@@ -75,8 +73,10 @@ const callbackApiNames = [
     'openEnterpriseChat'
 ];
 
+const _isFn = (fn) => 'function' === typeof fn;
+
 const promisify = (fn) => {
-    if (!isCallable(fn))
+    if (!_isFn(fn))
         throw 'The first argument `fn` must be a function.';
 
     return (options = {}, ...args) => {
@@ -90,14 +90,14 @@ const promisify = (fn) => {
             options.complete = undefined;
             fn(options, ...args);
         }).then((res) => {
-            isCallable(onSuccess) && onSuccess(res);
+            _isFn(onSuccess) && onSuccess(res);
             return res;
         }).catch((err) => {
-            isCallable(onFail) && onFail(err);
+            _isFn(onFail) && onFail(err);
             throw err;
         });
 
-        isCallable(p.finally) && isCallable(onComplete) && p.finally(onComplete);
+        _isFn(p.finally) && _isFn(onComplete) && p.finally(onComplete);
 
         return p;
     };
@@ -117,10 +117,10 @@ const promisifyAll = (config = {}) => {
         throw 'The first argument `config.extends` should be an array.';
 
     []
-        .concat(callbackApiNames, config.extends)
+        .concat(_apis, config.extends)
         .filter((e, i, arr) => !!e && arr.indexOf(e, 0) === i)
         .forEach((prop) => {
-            const fn = isCallable(wx[prop])
+            const fn = _isFn(wx[prop])
                 ? wx[prop]
                 : function (args = {}) {
                     args.fail({ errMsg: `${prop}:not supported` });

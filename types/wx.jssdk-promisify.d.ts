@@ -11,7 +11,7 @@ declare namespace WechatJssdk {
         type PromisifiedResult<T extends CallbackOption> = Promise<Parameters<T['success']>[0]>;
     }
 
-    interface Wx {
+    interface WxAsync {
         checkJsApiAsync(options?: Wx.PromisifiedOption<CheckJsApiOption>): Wx.PromisifiedResult<CheckJsApiOption>;
 
         /* 分享接口 */
@@ -133,4 +133,6 @@ declare namespace WechatJssdk {
             options?: Wx.PromisifiedOption<OpenEnterpriseChatOption>
         ): Wx.PromisifiedResult<OpenEnterpriseChatOption>;
     }
+
+    interface Wx extends WxAsync {}
 }

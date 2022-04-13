@@ -16,6 +16,7 @@ module.exports = {
     rules: {
         'prettier/prettier': 'off',
         '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/triple-slash-reference': 'off'
     }
